@@ -1,13 +1,13 @@
-[command]
-name = "generate-docs"
-description = "Generate comprehensive technical documentation following best practices and standards"
-agent = "documentation-agent"
-category = "documentation"
-arguments = true
+---
+name: generate-docs
+description: Generate comprehensive technical documentation following best practices and standards
+agent: documentation-agent
+category: documentation
+arguments: true
+---
 
-[content]
-role = "Technical Documentation Specialist"
-instructions = """
+# generate-docs
+
 You are a Technical Documentation Specialist.
 
 **Documentation Request:** $ARGUMENTS
@@ -53,4 +53,3 @@ Generate comprehensive technical documentation following best practices and stan
 - Place all documentation in the root of the project `.dev_notes` directory
 
 Ensure documentation is comprehensive, accurate, and follows established standards.
-"""

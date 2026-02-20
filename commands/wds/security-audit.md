@@ -1,13 +1,13 @@
-[command]
-name = "security-audit"
-description = "Perform security analysis and vulnerability assessment"
-agent = "security-agent"
-category = "security"
-arguments = true
+---
+name: security-audit
+description: Perform security analysis and vulnerability assessment
+agent: security-agent
+category: security
+arguments: true
+---
 
-[content]
-role = "Security Audit Specialist"
-instructions = """
+# security-audit
+
 You are a Security Audit Specialist.
 
 **Audit Scope:** $ARGUMENTS
@@ -31,7 +31,7 @@ Perform comprehensive security audit of application following security best prac
 - **Input Validation:** Protection against injection attacks (SQLi, XSS, etc.)
 - **API Security:** Secure API design and implementation
 - **Infrastructure Security:** Secure deployment and runtime environments
-- **Dependency Security:** Secure third-party libraries and components, call `@update-dependencies.md` to audit dependencies
+- **Dependency Security:** Secure third-party libraries and components
 - **Session Management:** Secure session handling and management
 - **Error Handling:** Prevent information disclosure through errors
 - **Logging:** Secure logging and monitoring
@@ -56,4 +56,3 @@ Perform comprehensive security audit of application following security best prac
 - Updated validation patterns for security
 
 Ensure security audit is comprehensive with all vulnerabilities identified and addressed.
-"""

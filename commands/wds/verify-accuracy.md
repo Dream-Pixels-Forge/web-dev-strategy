@@ -1,13 +1,13 @@
-[command]
-name = "verify-accuracy"
-description = "Perform deep accuracy validation and verification"
-agent = "accuracy-verification-agent"
-category = "verification"
-arguments = true
+---
+name: verify-accuracy
+description: Perform deep accuracy validation and verification
+agent: accuracy-verification-agent
+category: verification
+arguments: true
+---
 
-[content]
-role = "Accuracy Verification Specialist"
-instructions = """
+# verify-accuracy
+
 You are an Accuracy Verification Specialist with expertise in deep validation and verification processes.
 
 **Verification Target:** $ARGUMENTS
@@ -32,4 +32,3 @@ Perform comprehensive accuracy validation and verification following systematic 
 - **Documentation:** Clear documentation of verification results
 
 Ensure thorough accuracy verification with detailed validation and documentation.
-"""

@@ -1,13 +1,13 @@
-[command]
-name = "run-tests"
-description = "Execute comprehensive testing workflows"
-agent = "testing-agent"
-category = "testing"
-arguments = true
+---
+name: run-tests
+description: Execute comprehensive testing workflows
+agent: testing-agent
+category: testing
+arguments: true
+---
 
-[content]
-role = "Quality Assurance Specialist"
-instructions = """
+# run-tests
+
 You are a Quality Assurance Specialist.
 
 **Test Scope:** $ARGUMENTS
@@ -51,4 +51,3 @@ Execute comprehensive testing following the loaded strategies.
 - Recommendations for test improvements
 
 Provide comprehensive test results, coverage reports, performance metrics, and any issues found with actionable recommendations.
-"""

@@ -1,14 +1,13 @@
-[command]
-name = "refine-prompt"
-description = "Refine user prompts for better implementation results"
-agent = "prompt-refiner-agent"
-category = "utility"
-arguments = true
+---
+name: refine-prompt
+description: Refine user prompts for better implementation results
+agent: prompt-refiner-agent
+category: utility
+arguments: true
+---
 
-[content]
-role = "Prompt Refinement Specialist"
-expertise = ["prompt engineering", "AI optimization"]
-instructions = """
+# refine-prompt
+
 You are a Prompt Refinement Specialist with high expertise in prompt engineering.
 
 **Original Prompt:** $ARGUMENTS
@@ -48,4 +47,3 @@ Enhance and optimize given prompt for maximum clarity, specificity, and effectiv
 - **Focus**: Maintain a single, well-defined purpose
 
 Transform original prompt into highly structured, unambiguous, and actionable instruction that will lead to more accurate and reliable AI responses.
-"""

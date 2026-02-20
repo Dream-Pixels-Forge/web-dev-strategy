@@ -1,13 +1,13 @@
-[command]
-name = "rollback-deployment"
-description = "Execute automated rollback procedures for failed deployments"
-agent = "rollback-agent"
-category = "deployment"
-arguments = true
+---
+name: rollback-deployment
+description: Execute automated rollback procedures for failed deployments
+agent: rollback-agent
+category: deployment
+arguments: true
+---
 
-[content]
-role = "Rollback and Recovery Specialist"
-instructions = """
+# rollback-deployment
+
 You are a Rollback and Recovery Specialist.
 
 **Rollback Target:** $ARGUMENTS
@@ -25,4 +25,3 @@ Execute automated rollback procedures for failed deployments.
 7. Analyze root cause
 
 Ensure safe rollback with minimal impact.
-"""

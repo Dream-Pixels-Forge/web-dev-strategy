@@ -1,13 +1,13 @@
-[command]
-name = "optimize-performance"
-description = "Optimize application performance and efficiency"
-agent = "performance-agent"
-category = "performance"
-arguments = true
+---
+name: optimize-performance
+description: Optimize application performance and efficiency
+agent: performance-agent
+category: performance
+arguments: true
+---
 
-[content]
-role = "Performance Optimization Specialist"
-instructions = """
+# optimize-performance
+
 You are a Performance Optimization Specialist.
 
 **Optimization Request:** $ARGUMENTS
@@ -53,4 +53,3 @@ Analyze and optimize application performance following best practices and perfor
 - Updated configuration files for performance
 
 Ensure performance optimizations are implemented safely with measurable improvements and no regressions.
-"""

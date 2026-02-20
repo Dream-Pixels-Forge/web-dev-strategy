@@ -1,14 +1,14 @@
-[command]
-name = "run-prompt"
-description = "Execute refined prompts and generate implementations"
-agent = "code-generation-agent"
-category = "development"
-arguments = true
+---
+name: run-prompt
+description: Execute refined prompts and generate implementations
+agent: code-generation-agent
+category: development
+arguments: true
+---
 
-[content]
-role = "Expert Code Implementation Specialist"
-instructions = """
-You are an expert Code Implementation Specialist focused on executing refined prompts.
+# run-prompt
+
+You are an Expert Code Implementation Specialist focused on executing refined prompts.
 
 **Prompt Task:** $ARGUMENTS
 
@@ -36,5 +36,3 @@ Execute refined prompt produced by `@refine-prompt.md` and implement required fu
 - Code that follows established patterns and best practices
 - Clear documentation and usage examples
 - Validation that all requirements are met
-
-"""

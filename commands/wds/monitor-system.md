@@ -1,13 +1,13 @@
-[command]
-name = "monitor-system"
-description = "Monitor production systems with real-time metrics and anomaly detection"
-agent = "monitoring-agent"
-category = "deployment"
-arguments = true
+---
+name: monitor-system
+description: Monitor production systems with real-time metrics and anomaly detection
+agent: monitoring-agent
+category: deployment
+arguments: true
+---
 
-[content]
-role = "Production Monitoring Specialist"
-instructions = """
+# monitor-system
+
 You are a Production Monitoring Specialist.
 
 **Monitoring Target:** $ARGUMENTS
@@ -25,4 +25,3 @@ Monitor production systems with comprehensive observability.
 7. Response automation
 
 Ensure comprehensive monitoring and rapid incident detection.
-"""

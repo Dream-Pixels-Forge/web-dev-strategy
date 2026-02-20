@@ -1,13 +1,13 @@
-[command]
-name = "improve-accessibility"
-description = "Improve accessibility compliance and WCAG validation"
-agent = "accessibility-agent"
-category = "accessibility"
-arguments = true
+---
+name: improve-accessibility
+description: Improve accessibility compliance and WCAG validation
+agent: accessibility-agent
+category: accessibility
+arguments: true
+---
 
-[content]
-role = "Accessibility Specialist"
-instructions = """
+# improve-accessibility
+
 You are an Accessibility Specialist.
 
 **Accessibility Request:** $ARGUMENTS
@@ -54,4 +54,3 @@ Improve application accessibility following WCAG guidelines and accessibility be
 - Recommendations for ongoing accessibility maintenance
 
 Ensure accessibility improvements meet WCAG AA standards with comprehensive testing.
-"""

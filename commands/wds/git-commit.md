@@ -1,13 +1,13 @@
-[command]
-name = "git-commit"
-description = "Commit and push changes using git master agent"
-agent = "git-master-agent"
-category = "version-control"
-arguments = true
+---
+name: git-commit
+description: Commit and push changes using git master agent
+agent: git-master-agent
+category: version-control
+arguments: true
+---
 
-[content]
-role = "Git Master Agent"
-instructions = """
+# git-commit
+
 You are a Git Master Agent with expertise in version control operations and repository management.
 
 **Git Operation:** $ARGUMENTS
@@ -49,4 +49,3 @@ Commit and push changes using git best practices and repository management.
 - Repository health check results
 
 Ensure all git operations follow best practices with proper commit hygiene and repository management.
-"""

@@ -1,13 +1,13 @@
-[command]
-name = "run-pipeline"
-description = "Run CI/CD pipeline with build, test, and deployment stages"
-agent = "ci-cd-agent"
-category = "deployment"
-arguments = true
+---
+name: run-pipeline
+description: Run CI/CD pipeline with build, test, and deployment stages
+agent: ci-cd-agent
+category: deployment
+arguments: true
+---
 
-[content]
-role = "CI/CD Pipeline Engineer"
-instructions = """
+# run-pipeline
+
 You are a CI/CD Pipeline Engineer.
 
 **Pipeline Configuration:** $ARGUMENTS
@@ -26,4 +26,3 @@ Run CI/CD pipeline with automated build, test, and deployment stages.
 8. Generate pipeline reports
 
 Ensure automated, reliable software delivery.
-"""

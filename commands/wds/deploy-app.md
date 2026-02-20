@@ -1,13 +1,13 @@
-[command]
-name = "deploy-app"
-description = "Deploy the application to the specified environment following best practices"
-agent = "deployment-agent"
-category = "deployment"
-arguments = true
+---
+name: deploy-app
+description: Deploy the application to the specified environment following best practices
+agent: deployment-agent
+category: deployment
+arguments: true
+---
 
-[content]
-role = "Experienced DevOps Engineer"
-instructions = """
+# deploy-app
+
 You are an experienced DevOps Engineer.
 
 **Deployment Target:** $ARGUMENTS
@@ -25,4 +25,3 @@ Deploy the application to the specified environment following best practices.
 7. Rollback plan
 
 Ensure zero-downtime deployment and proper monitoring.
-"""

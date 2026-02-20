@@ -1,13 +1,13 @@
-[command]
-name = "update-dependencies"
-description = "Update project dependencies to the latest versions"
-agent = "updater-agent"
-category = "maintenance"
-arguments = true
+---
+name: update-dependencies
+description: Update project dependencies to the latest versions
+agent: updater-agent
+category: maintenance
+arguments: true
+---
 
-[content]
-role = "Dependency Management Specialist"
-instructions = """
+# update-dependencies
+
 You are a Dependency Management Specialist with high expertise in security and compatibility.
 
 **Update Scope:** $ARGUMENTS
@@ -42,4 +42,3 @@ Update project dependencies specifically to the latest versions by following sec
 - List of breaking changes (if any) and required code updates
 
 Ensure dependency updates to the latest versions are performed safely with security and compatibility verification.
-"""
