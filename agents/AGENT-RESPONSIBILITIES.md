@@ -153,6 +153,38 @@ Each agent has a single, well-defined responsibility with no overlap. This elimi
 **Does NOT do**: Code generation, testing, or implementation
 **Commands**: verify-accuracy
 
+## Deployment Agents
+
+### monitoring-agent
+**Role**: Production monitoring and observability
+**Responsibilities**:
+- Monitor production systems in real-time
+- Detect anomalies and trigger alerts
+- Perform incident detection and analysis
+- Provide comprehensive observability
+**Does NOT do**: Code generation, testing, or deployment execution
+**Commands**: monitor-system
+
+### rollback-agent
+**Role**: Automated rollback and recovery
+**Responsibilities**:
+- Execute automated rollback procedures
+- Validate rollback success
+- Track rollback history and analytics
+- Coordinate recovery orchestration
+**Does NOT do**: Code generation, testing, or deployment execution
+**Commands**: rollback-deployment
+
+### ci-cd-agent
+**Role**: CI/CD pipeline automation and management
+**Responsibilities**:
+- Orchestrate build and test pipelines
+- Manage deployment triggers and automation
+- Handle artifact management
+- Monitor pipeline performance
+**Does NOT do**: Direct deployment, testing, or code generation
+**Commands**: run-pipeline
+
 ## Coordination Protocols
 
 ### Agent Interaction Rules
