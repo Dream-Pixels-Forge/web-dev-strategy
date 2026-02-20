@@ -1,0 +1,124 @@
+[commands]
+
+[commands.debug-issue]
+name = "debug-issue"
+description = "Debug and resolve issues in the application"
+agent = "debugger-agent"
+category = "debugging"
+arguments = true
+
+[commands.deploy-app]
+name = "deploy-app"
+description = "Deploy the application to the specified environment following best practices"
+agent = "deployment-agent"
+category = "deployment"
+arguments = true
+
+[commands.git-commit]
+name = "git-commit"
+description = "Commit and push changes using git master agent"
+agent = "git-master-agent"
+category = "version-control"
+arguments = true
+
+[commands.generate-docs]
+name = "generate-docs"
+description = "Generate comprehensive documentation for the project"
+agent = "documentation-agent"
+category = "documentation"
+arguments = true
+
+[commands.improve-accessibility]
+name = "improve-accessibility"
+description = "Improve accessibility compliance and WCAG validation"
+agent = "accessibility-agent"
+category = "accessibility"
+arguments = true
+
+[commands.improvement]
+name = "improvement"
+description = "Improve code quality and implement optimizations"
+agent = "improvement-agent"
+category = "improvement"
+arguments = true
+
+[commands.new-feature]
+name = "new-feature"
+description = "Create a complete feature implementation following best practices"
+agent = "code-generation-agent"
+category = "development"
+arguments = true
+
+[commands.optimize-performance]
+name = "optimize-performance"
+description = "Optimize application performance and efficiency"
+agent = "performance-agent"
+category = "performance"
+arguments = true
+
+[commands.refine-prompt]
+name = "refine-prompt"
+description = "Refine user prompts for better implementation results"
+agent = "prompt-refiner-agent"
+category = "utility"
+arguments = true
+
+[commands.run-prompt]
+name = "run-prompt"
+description = "Execute refined prompts and generate implementations"
+agent = "code-generation-agent"
+category = "development"
+arguments = true
+
+[commands.run-tests]
+name = "run-tests"
+description = "Run comprehensive testing workflows"
+agent = "testing-agent"
+category = "testing"
+arguments = true
+
+[commands.security-audit]
+name = "security-audit"
+description = "Perform security analysis and vulnerability assessment"
+agent = "security-agent"
+category = "security"
+arguments = true
+
+[commands.update-dependencies]
+name = "update-dependencies"
+description = "Update project dependencies to the latest versions"
+agent = "updater-agent"
+category = "maintenance"
+arguments = true
+
+[commands.verify-accuracy]
+name = "verify-accuracy"
+description = "Perform deep accuracy validation and verification"
+agent = "accuracy-verification-agent"
+category = "verification"
+arguments = true
+
+[commands.web-dev-strategy-agent]
+name = "web-dev-strategy-agent"
+description = "Orchestrates web development workflows and project management with accuracy verification"
+agent = "web-dev-strategy-agent"
+category = "orchestration"
+mode = "primary"
+tools = ["read", "write", "task"]
+arguments = true
+
+[command_categories]
+development = "Feature development and implementation"
+testing = "Testing and quality assurance"
+deployment = "Deployment and operations"
+security = "Security analysis and vulnerability assessment"
+performance = "Performance optimization and profiling"
+accessibility = "Accessibility compliance and WCAG validation"
+documentation = "Documentation generation and maintenance"
+debugging = "Issue debugging and resolution"
+improvement = "Code quality analysis and optimization"
+maintenance = "Dependency updates and maintenance tasks"
+verification = "Accuracy validation and verification"
+orchestration = "Workflow orchestration and project management"
+utility = "Utility functions and tools"
+version-control = "Git operations and version control"

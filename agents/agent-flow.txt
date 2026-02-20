@@ -1,0 +1,73 @@
+OpenCode Agent Collection - Flow Diagram
+=========================================
+
+USER REQUEST
+     |
+     v
+[@web-dev-strategy-agent] - Main Orchestrator
+     |
+     |--- [@analyst-agent] - Creates market analysis documents (market-analysis.md)
+     |        |
+     |        v
+     |    [@prd-doc-agent] - Creates product requirements documents (PRD.md)
+     |        |
+     |        v
+     |--- [@plan-agent] - Creates implementation plans
+     |        |
+     |        v
+     |    [@trends-agent] - Provides market/tech trends
+     |
+     |--- [@tasks-agent] - Organizes and tracks tasks
+     |
+     |--- Generates files:
+     |        - roadmap/market-analysis.md
+     |        - roadmap/PRD.md
+     |        - roadmap/plan.md
+     |        - roadmap/tasks.md
+     |
+     |--- Delegates to specialized agents:
+     |
+     |--- [@lint-agent] - Code linting & quality
+     |        |
+     |        |--- [@code-generation-agent] - Implements fixes
+     |        |--- [@security-agent] - Deep security analysis
+     |        |--- [@web-dev-strategy-agent] - Reports for roadmap/lint-tasks.md
+     |
+     |--- [@debugger-agent] - Bug identification & diagnosis
+     |        |
+     |        |--- [@code-generation-agent] - Implements fixes
+     |        |--- [@web-dev-strategy-agent] - Reports for roadmap/debugging-tasks.md
+     |
+     |--- [@code-generation-agent] - Code implementation
+     |--- [@testing-agent] - Testing workflows
+     |--- [@improvement-agent] - Code quality analysis
+     |--- [@security-agent] - Security assessment
+     |--- [@performance-agent] - Performance optimization
+     |--- [@uiux-agent] - UI/UX design
+     |--- [@accessibility-agent] - Accessibility compliance
+     |--- [@deployment-agent] - Production deployment
+     |--- [@proposal-agent] - Research & proposals
+     |--- [@accuracy-verification-agent] - Quality assurance
+     |--- [@documentation-agent] - Documentation
+     |--- [@improver-agent] - Agent improvements
+
+SPECIALIZED FLOWS:
+
+Linting Flow:
+[@lint-agent] -> [@code-generation-agent] (for fixes)
+[@lint-agent] -> [@security-agent] (for security analysis)
+[@lint-agent] -> [@web-dev-strategy-agent] -> [roadmap/lint-tasks.md]
+
+Debugging Flow:
+[@debugger-agent] -> [@code-generation-agent] (for fixes)
+[@debugger-agent] -> [@web-dev-strategy-agent] -> [roadmap/debugging-tasks.md]
+
+Task Coordination:
+[@web-dev-strategy-agent] -> [@analyst-agent] -> [roadmap/market-analysis.md]
+[@web-dev-strategy-agent] -> [@prd-doc-agent] -> [roadmap/PRD.md]
+[@web-dev-strategy-agent] -> [@tasks-agent] -> [roadmap/tasks.md]
+[@plan-agent] -> [roadmap/plan.md]
+
+Code Generation Follows Tasks:
+[@code-generation-agent] reads [roadmap/lint-tasks.md] and [roadmap/debugging-tasks.md]
+and implements fixes step-by-step based on structured task lists.

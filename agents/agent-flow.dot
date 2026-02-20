@@ -1,0 +1,86 @@
+digraph AgentFlow {
+    rankdir=TB;
+    node [shape=box, style=rounded, fontname="Arial", fontsize=10];
+    edge [fontname="Arial", fontsize=8];
+
+    // Main coordinator
+    web_dev_strategy_agent [label="@web-dev-strategy-agent\n(Orchestrator)", fillcolor=lightblue, style="rounded,filled", shape=box];
+
+    // Analysis and planning agents
+    analyst_agent [label="@analyst-agent\n(Market Analysis)", fillcolor=lightcyan, style="rounded,filled", shape=box];
+    prd_doc_agent [label="@prd-doc-agent\n(Product Requirements)", fillcolor=lightcyan, style="rounded,filled", shape=box];
+    plan_agent [label="@plan-agent", fillcolor=lightyellow, style="rounded,filled", shape=box];
+    trends_agent [label="@trends-agent", fillcolor=lightyellow, style="rounded,filled", shape=box];
+
+    // Task management
+    tasks_agent [label="@tasks-agent", fillcolor=lightgreen, style="rounded,filled", shape=box];
+
+    // Specialized agents
+    lint_agent [label="@lint-agent\n(Linting & Code Quality)", fillcolor=orange, style="rounded,filled", shape=box];
+    debugger_agent [label="@debugger-agent\n(Debugging)", fillcolor=orange, style="rounded,filled", shape=box];
+    code_generation_agent [label="@code-generation-agent\n(Code Implementation)", fillcolor=orange, style="rounded,filled", shape=box];
+    testing_agent [label="@testing-agent", fillcolor=orange, style="rounded,filled", shape=box];
+    improvement_agent [label="@improvement-agent\n(Code Quality)", fillcolor=orange, style="rounded,filled", shape=box];
+    security_agent [label="@security-agent\n(Security Analysis)", fillcolor=orange, style="rounded,filled", shape=box];
+    performance_agent [label="@performance-agent\n(Performance)", fillcolor=orange, style="rounded,filled", shape=box];
+    uiux_agent [label="@uiux-agent\n(UI/UX Design)", fillcolor=orange, style="rounded,filled", shape=box];
+    accessibility_agent [label="@accessibility-agent\n(Accessibility)", fillcolor=orange, style="rounded,filled", shape=box];
+    deployment_agent [label="@deployment-agent\n(Deployment)", fillcolor=orange, style="rounded,filled", shape=box];
+    proposal_agent [label="@proposal-agent\n(Research & Proposals)", fillcolor=orange, style="rounded,filled", shape=box];
+    accuracy_verification_agent [label="@accuracy-verification-agent\n(Quality Assurance)", fillcolor=orange, style="rounded,filled", shape=box];
+    documentation_agent [label="@documentation-agent", fillcolor=orange, style="rounded,filled", shape=box];
+    improver_agent [label="@improver-agent\n(Agent Improvement)", fillcolor=orange, style="rounded,filled", shape=box];
+
+    // File outputs
+    market_analysis [label="roadmap/market-analysis.md", fillcolor=lightpink, style="rounded,filled", shape=box];
+    prd_doc [label="roadmap/PRD.md", fillcolor=lightpink, style="rounded,filled", shape=box];
+    lint_tasks [label="roadmap/lint-tasks.md", fillcolor=lightpink, style="rounded,filled", shape=box];
+    debugging_tasks [label="roadmap/debugging-tasks.md", fillcolor=lightpink, style="rounded,filled", shape=box];
+    tasks_md [label="roadmap/tasks.md", fillcolor=lightpink, style="rounded,filled", shape=box];
+    plan_md [label="roadmap/plan.md", fillcolor=lightpink, style="rounded,filled", shape=box];
+
+    // Main flow
+    web_dev_strategy_agent -> analyst_agent [label="calls first"];
+    analyst_agent -> prd_doc_agent [label="calls second"];
+    prd_doc_agent -> plan_agent [label="calls third"];
+    plan_agent -> trends_agent [label="calls first"];
+    web_dev_strategy_agent -> tasks_agent [label="calls fourth"];
+    
+    // Lint agent flow
+    lint_agent -> code_generation_agent [label="calls for fixes"];
+    lint_agent -> security_agent [label="calls for deep security analysis"];
+    lint_agent -> web_dev_strategy_agent [label="sends report"];
+    web_dev_strategy_agent -> lint_tasks [label="generates"];
+
+    // Debugger agent flow
+    debugger_agent -> code_generation_agent [label="calls for fixes"];
+    debugger_agent -> web_dev_strategy_agent [label="sends report"];
+    web_dev_strategy_agent -> debugging_tasks [label="generates"];
+
+    // Other agent flows
+    web_dev_strategy_agent -> code_generation_agent [label="delegates implementation"];
+    web_dev_strategy_agent -> testing_agent [label="delegates testing"];
+    web_dev_strategy_agent -> improvement_agent [label="delegates improvements"];
+    web_dev_strategy_agent -> security_agent [label="delegates security review"];
+    web_dev_strategy_agent -> performance_agent [label="delegates performance analysis"];
+    web_dev_strategy_agent -> uiux_agent [label="delegates UI/UX design"];
+    web_dev_strategy_agent -> accessibility_agent [label="delegates accessibility audit"];
+    web_dev_strategy_agent -> deployment_agent [label="delegates deployment"];
+    web_dev_strategy_agent -> proposal_agent [label="delegates research"];
+    web_dev_strategy_agent -> accuracy_verification_agent [label="delegates verification"];
+    web_dev_strategy_agent -> documentation_agent [label="delegates documentation"];
+    web_dev_strategy_agent -> improver_agent [label="delegates agent improvements"];
+
+    // Task and plan generation
+    analyst_agent -> market_analysis [label="generates"];
+    prd_doc_agent -> prd_doc [label="generates"];
+    plan_agent -> plan_md [label="generates"];
+    tasks_agent -> tasks_md [label="generates"];
+
+    // Subagent collaboration
+    proposal_agent -> trends_agent [label="calls for trends"];
+    plan_agent -> trends_agent [label="calls for trends"];
+
+    // Styling issue flow
+    debugger_agent -> code_generation_agent [label="fixes UI/UX styling issues"];
+}

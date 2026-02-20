@@ -1,0 +1,8 @@
+{
+  "name": "web-dev-strategy",
+  "version": "0.3.0",
+  "contextFileName": "QWEN.md",
+  "commandsConfig": "commands.toml",
+  "commandsPath": "commands/wds",
+  "format": "toml"
+}
