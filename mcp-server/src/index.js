@@ -173,6 +173,8 @@ class WebDevStrategyServer {
         };
       }
     }
+
+    return commands;
   }
 
   parseFrontmatter(content) {

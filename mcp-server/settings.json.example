@@ -2,9 +2,10 @@
   "mcpServers": {
     "web-dev-strategy": {
       "command": "node",
-      "args": ["{{EXTENSION_PATH}}/mcp-server/src/index.js"],
+      "args": ["{{PATH_TO}}/mcp-server/src/index.js"],
       "description": "Web Dev Strategy - Skills, Agents, and Commands",
-      "trust": true
+      "trust": true,
+      "timeout": 300000
     }
   }
 }
