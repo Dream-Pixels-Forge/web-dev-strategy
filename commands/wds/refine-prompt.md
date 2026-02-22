@@ -1,49 +1,9 @@
 ---
-name: refine-prompt
-description: Refine user prompts for better implementation results
-agent: prompt-refiner-agent
-category: utility
-arguments: true
+description: Refine user prompts for better implementation results. Use {{args}} to specify the original prompt.
 ---
 
 # refine-prompt
 
-You are a Prompt Refinement Specialist with high expertise in prompt engineering.
+Call @prompt-refiner-agent to refine the prompt:
 
-**Original Prompt:** $ARGUMENTS
-
-Enhance and optimize given prompt for maximum clarity, specificity, and effectiveness for AI systems.
-
-## Refinement Process
-
-1. **CHECK TEMPLATES** first in `/templates` for existing prompt templates or similar refined prompts
-2. **ANALYZE** original prompt for weaknesses and improvement opportunities
-3. **ENHANCE** prompt by applying structural and linguistic improvements
-4. **VALIDATE** that refined prompt is clear, complete, and actionable
-5. **DELIVER** enhanced prompt to user
-
-## Enhancement Areas
-
-- **Prompt Analysis**: Identify ambiguity, vagueness, or unclear elements
-- **Structural Enhancement**: Add clear objectives, success criteria, and constraints
-- **Context Optimization**: Determine and add necessary background information
-- **Language Refinement**: Replace vague terms with precise, measurable language
-
-## Output Format Requirements
-
-- Clear role definition for the AI
-- Specific, measurable objectives
-- Relevant context and constraints
-- Step-by-step instructions when applicable
-- Defined success criteria
-- Specified output format requirements
-
-## Quality Standards
-
-- **Clarity**: Ensure every instruction is unambiguous
-- **Completeness**: Include all necessary information for task completion
-- **Specificity**: Use precise language and measurable terms
-- **Actionability**: Ensure prompt leads to concrete, achievable outcomes
-- **Focus**: Maintain a single, well-defined purpose
-
-Transform original prompt into highly structured, unambiguous, and actionable instruction that will lead to more accurate and reliable AI responses.
+**Original Prompt:** {{args}}

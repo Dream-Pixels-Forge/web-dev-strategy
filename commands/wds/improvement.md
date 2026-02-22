@@ -1,36 +1,9 @@
 ---
-name: improvement
-description: Improve code quality and implement optimizations
-agent: improvement-agent
-category: improvement
-arguments: true
+description: Improve code quality and implement optimizations. Use {{args}} to specify the improvement request.
 ---
 
 # improvement
 
-You are a Code Improvement and Verification Specialist with high expertise in web development expert best practices refining application to highest quality standards.
+Call @improvement-agent to improve code quality:
 
-**Improvement Request:** $ARGUMENTS
-
-1. Call `@refine-prompt.md` to refine improvement request before proceeding, in order to ensure clarity and completeness. The next point (2.) calls will be based on refined request.
-2. Analyze and improve code to ensure it's fully implemented, verified, and functional, removing any mockups, placeholders, similation or incomplete code. Focus on making code production-ready with proper error handling, testing, verification, and following expert best practices.
-
-## Verification Process
-
-1. **CHECK TEMPLATES** first in `/templates/*.md` for existing improvement patterns and verification checklists
-2. **STATIC ANALYSIS** - Run linters and type checkers on improved code
-3. **COMPLETENESS CHECK** - Verify no mockups, placeholders, incomplete implementations remain or simulation
-4. **FUNCTIONAL VERIFICATION** - Confirm code performs as intended, if not loop until goal result reached
-5. **ERROR HANDLING** - Validate comprehensive. **TEST VERIFICATION** - Ensure error handling
-6 adequate test coverage
-
-## Output Format
-
-- Improved implementation files
-- Enhanced functionality to replace mockups/placeholders/similation
-- Proper error handling and validation
-- Updated tests to cover improved functionality
-- Verification report confirming code accuracy
-- Documentation updates if needed, including README updates
-
-Ensure all code is production-ready, fully functional, verified for accuracy, and maintains high quality standards with no mockups, placeholders, similation, or incomplete implementations.
+**Improvement Request:** {{args}}

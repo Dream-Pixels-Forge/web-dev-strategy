@@ -1,53 +1,9 @@
 ---
-name: run-tests
-description: Execute comprehensive testing workflows
-agent: testing-agent
-category: testing
-arguments: true
+description: Execute comprehensive testing workflows. Use {{args}} to specify the test scope.
 ---
 
 # run-tests
 
-You are a Quality Assurance Specialist.
+Call @testing-agent to execute tests:
 
-**Test Scope:** $ARGUMENTS
-
-Execute comprehensive testing following the loaded strategies.
-
-## Testing Approach
-
-1. **CHECK TEMPLATES** first in `/templates` for existing testing patterns and checklists
-2. **ANALYZE** requirements and identify test scenarios
-3. **PLAN** comprehensive test coverage (unit, integration, e2e, performance)
-4. **IMPLEMENT** tests following testing-strategies.md patterns
-5. **EXECUTE** tests systematically with proper reporting
-6. **VERIFY** test results and coverage metrics
-7. **MAINTAIN** tests for long-term reliability
-
-## Testing Types
-
-- **Unit Tests:** Test individual functions and components in isolation
-- **Integration Tests:** Test component interactions and API integrations
-- **E2E Tests:** Test complete user workflows and critical paths
-- **Performance Tests:** Validate speed, scalability, and resource usage
-- **Security Tests:** Verify security controls and vulnerability protection
-- **Accessibility Tests:** Ensure compliance with a11y standards
-- **Regression Tests:** Prevent introduction of new bugs
-
-## Quality Requirements
-
-- **Test Coverage:** Maintain >80% code coverage with meaningful tests
-- **Reliability:** Tests must be deterministic and not flaky
-- **Performance:** Test suites must execute efficiently (< 10 minutes for CI)
-- **Maintainability:** Tests must be readable and easy to update
-- **Completeness:** All critical paths and edge cases must be tested
-
-## Output Format
-
-- Test execution results with pass/fail status
-- Code coverage reports
-- Performance metrics
-- List of any issues found
-- Recommendations for test improvements
-
-Provide comprehensive test results, coverage reports, performance metrics, and any issues found with actionable recommendations.
+**Test Scope:** {{args}}

@@ -1,27 +1,9 @@
 ---
-name: monitor-system
-description: Monitor production systems with real-time metrics and anomaly detection
-agent: monitoring-agent
-category: deployment
-arguments: true
+description: Monitor production systems with real-time metrics and anomaly detection. Use {{args}} to specify the monitoring target.
 ---
 
 # monitor-system
 
-You are a Production Monitoring Specialist.
+Call @monitoring-agent to monitor systems:
 
-**Monitoring Target:** $ARGUMENTS
-
-Monitor production systems with comprehensive observability.
-
-## Monitoring Tasks
-
-1. **CHECK TEMPLATES** first in `/templates` for existing monitoring patterns
-2. Real-time metrics collection
-3. Anomaly detection setup
-4. Alert configuration
-5. Dashboard creation
-6. Incident detection
-7. Response automation
-
-Ensure comprehensive monitoring and rapid incident detection.
+**Monitoring Target:** {{args}}

@@ -1,28 +1,9 @@
 ---
-name: run-pipeline
-description: Run CI/CD pipeline with build, test, and deployment stages
-agent: ci-cd-agent
-category: deployment
-arguments: true
+description: Run CI/CD pipeline with build, test, and deployment stages. Use {{args}} to specify the pipeline configuration.
 ---
 
 # run-pipeline
 
-You are a CI/CD Pipeline Engineer.
+Call @ci-cd-agent to run the pipeline:
 
-**Pipeline Configuration:** $ARGUMENTS
-
-Run CI/CD pipeline with automated build, test, and deployment stages.
-
-## Pipeline Tasks
-
-1. **CHECK TEMPLATES** first in `/templates` for existing CI/CD patterns
-2. Configure pipeline stages
-3. Execute build process
-4. Run automated tests
-5. Perform security scans
-6. Execute deployment
-7. Validate quality gates
-8. Generate pipeline reports
-
-Ensure automated, reliable software delivery.
+**Pipeline Configuration:** {{args}}

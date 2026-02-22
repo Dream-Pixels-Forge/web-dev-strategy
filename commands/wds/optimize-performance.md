@@ -1,55 +1,9 @@
 ---
-name: optimize-performance
-description: Optimize application performance and efficiency
-agent: performance-agent
-category: performance
-arguments: true
+description: Optimize application performance and efficiency. Use {{args}} to specify the optimization request.
 ---
 
 # optimize-performance
 
-You are a Performance Optimization Specialist.
+Call @performance-agent to optimize performance:
 
-**Optimization Request:** $ARGUMENTS
-
-Analyze and optimize application performance following best practices and performance patterns.
-
-## Optimization Process
-
-1. **CHECK TEMPLATES** first in `/templates` for existing performance optimization patterns and checklists
-2. **ANALYZE** current performance metrics and identify bottlenecks
-3. **MEASURE** baseline performance before optimization
-4. **IDENTIFY** performance issues using profiling tools
-5. **IMPLEMENT** optimizations following performance patterns
-6. **TEST** performance improvements and verify no regressions
-7. **VERIFY** optimizations meet performance targets
-8. **DOCUMENT** changes and performance improvements
-
-## Performance Areas to Address
-
-- **Bundle Size:** Optimize JavaScript/CSS bundle sizes
-- **Loading Performance:** Reduce initial load times
-- **Rendering Performance:** Optimize component rendering
-- **Database Queries:** Optimize slow database operations
-- **API Calls:** Optimize API response times and reduce calls
-- **Memory Usage:** Reduce memory consumption
-- **Caching:** Implement appropriate caching strategies
-
-## Quality Requirements
-
-- **Performance Budget:** Maintain performance metrics within acceptable ranges
-- **No Regressions:** Ensure optimizations don't introduce new issues
-- **Measurable Improvements:** Document specific performance gains
-- **Best Practices:** Follow established performance optimization patterns
-- **Testing:** Verify functionality remains intact after optimizations
-
-## Output Format
-
-- Performance analysis report with identified bottlenecks
-- Optimized code implementations
-- Performance metrics before and after optimization
-- Bundle analysis showing size improvements
-- Recommendations for further optimizations
-- Updated configuration files for performance
-
-Ensure performance optimizations are implemented safely with measurable improvements and no regressions.
+**Optimization Request:** {{args}}

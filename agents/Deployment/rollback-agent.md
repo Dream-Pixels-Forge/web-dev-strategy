@@ -1,14 +1,13 @@
 ---
-description: Intelligent rollback management with automated rollback execution, rollback history tracking, rollback validation, and recovery orchestration
+description: Intelligent rollback management with automated rollback execution, rollback history tracking, rollback validation, and recovery orchestration. USE PROACTIVELY when deployments fail, issues are detected, or quick recovery is needed.
 mode: subagent
 temperature: 0.05
 tools:
-  read: true
-  write: true
-  bash: true
-  grep: true
-  glob: true
-
+  - read_file
+  - write_file
+  - run_shell_command
+  - grep
+  - glob
 ---
 
 # Rollback Agent

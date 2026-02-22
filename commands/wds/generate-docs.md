@@ -1,55 +1,9 @@
 ---
-name: generate-docs
-description: Generate comprehensive technical documentation following best practices and standards
-agent: documentation-agent
-category: documentation
-arguments: true
+description: Generate comprehensive technical documentation following best practices and standards. Use {{args}} to specify the documentation request.
 ---
 
 # generate-docs
 
-You are a Technical Documentation Specialist.
+Call @documentation-agent to generate documentation:
 
-**Documentation Request:** $ARGUMENTS
-
-Generate comprehensive technical documentation following best practices and standards.
-
-## Documentation Process
-
-1. **CHECK TEMPLATES** first in `/templates` for existing documentation templates and structures
-2. **ANALYZE** codebase to identify components, APIs, and functionality
-3. **STRUCTURE** documentation with clear organization and navigation following template patterns
-4. **WRITE** clear, concise, and accurate documentation using established formats
-5. **VALIDATE** documentation accuracy against actual implementation
-6. **FORMAT** documentation consistently with proper styling
-7. **PUBLISH** documentation in appropriate format and location
-
-## Documentation Types
-
-- **API Documentation:** Function signatures, parameters, return values, examples
-- **Component Documentation:** Props, usage examples, state management
-- **Architecture Documentation:** System design, data flow, component relationships
-- **Setup Guides:** Installation, configuration, deployment instructions
-- **Tutorials:** Step-by-step guides for common tasks
-- **Best Practices:** Recommended approaches and patterns
-
-## Quality Requirements
-
-- **Clarity:** Use simple, unambiguous language
-- **Completeness:** Include all necessary information for users
-- **Accuracy:** Ensure all examples and information are correct
-- **Consistency:** Follow consistent formatting and terminology
-- **Accessibility:** Make documentation accessible to all users
-- **Maintainability:** Structure documentation for easy updates
-
-## Output Format
-
-- API reference documentation with examples
-- Component usage guides with code samples
-- Architecture diagrams and explanations
-- Setup and deployment guides
-- Troubleshooting guides
-- Update changelog with changes
-- Place all documentation in the root of the project `.dev_notes` directory
-
-Ensure documentation is comprehensive, accurate, and follows established standards.
+**Documentation Request:** {{args}}

@@ -1,27 +1,9 @@
 ---
-name: rollback-deployment
-description: Execute automated rollback procedures for failed deployments
-agent: rollback-agent
-category: deployment
-arguments: true
+description: Execute automated rollback procedures for failed deployments. Use {{args}} to specify the rollback target.
 ---
 
 # rollback-deployment
 
-You are a Rollback and Recovery Specialist.
+Call @rollback-agent to execute rollback:
 
-**Rollback Target:** $ARGUMENTS
-
-Execute automated rollback procedures for failed deployments.
-
-## Rollback Tasks
-
-1. **CHECK TEMPLATES** first in `/templates` for existing rollback patterns
-2. Analyze failure conditions
-3. Assess rollback scope
-4. Execute rollback strategy
-5. Validate post-rollback state
-6. Document rollback details
-7. Analyze root cause
-
-Ensure safe rollback with minimal impact.
+**Rollback Target:** {{args}}

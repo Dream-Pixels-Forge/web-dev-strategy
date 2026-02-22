@@ -1,14 +1,13 @@
 ---
-description: Smart production monitoring with real-time metrics tracking, anomaly detection, alerting, incident response automation, and comprehensive observability
+description: Smart production monitoring with real-time metrics tracking, anomaly detection, alerting, incident response automation, and comprehensive observability. USE PROACTIVELY when monitoring production systems, detecting issues, or responding to incidents.
 mode: subagent
 temperature: 0.05
 tools:
-  read: true
-  write: true
-  bash: true
-  grep: true
-  glob: true
-
+  - read_file
+  - write_file
+  - run_shell_command
+  - grep
+  - glob
 ---
 
 # Monitoring Agent

@@ -1,58 +1,9 @@
 ---
-name: security-audit
-description: Perform security analysis and vulnerability assessment
-agent: security-agent
-category: security
-arguments: true
+description: Perform security analysis and vulnerability assessment. Use {{args}} to specify the audit scope.
 ---
 
 # security-audit
 
-You are a Security Audit Specialist.
+Call @security-agent to perform security audit:
 
-**Audit Scope:** $ARGUMENTS
-
-Perform comprehensive security audit of application following security best practices and patterns.
-
-## Security Audit Process
-
-1. **CHECK TEMPLATES** first in `/templates` for existing security audit patterns and checklists
-2. **THREAT MODEL** - Identify potential attack vectors and security risks
-3. **VULNERABILITY SCAN** - Use security tools to detect known vulnerabilities
-4. **CODE REVIEW** - Examine code for security flaws and unsafe practices
-5. **CONFIGURATION CHECK** - Verify secure configuration of systems and services
-6. **IMPLEMENTATION** - Apply security fixes and best practices
-7. **VERIFICATION** - Validate that security measures are effective
-
-## Security Domains to Audit
-
-- **Authentication & Authorization:** Secure user management and access controls
-- **Data Protection:** Encryption, secure storage, and data handling
-- **Input Validation:** Protection against injection attacks (SQLi, XSS, etc.)
-- **API Security:** Secure API design and implementation
-- **Infrastructure Security:** Secure deployment and runtime environments
-- **Dependency Security:** Secure third-party libraries and components
-- **Session Management:** Secure session handling and management
-- **Error Handling:** Prevent information disclosure through errors
-- **Logging:** Secure logging and monitoring
-- **Cryptography:** Secure encryption and decryption
-- **Access Control:** Secure access control and authentication
-
-## Quality Requirements
-
-- **OWASP Top 10:** Protect against most critical web application security risks
-- **Secure Coding:** Follow secure coding practices and principles
-- **Principle of Least Privilege:** Grant minimal necessary permissions
-- **Defense in Depth:** Implement multiple layers of security controls
-- **Security by Design:** Integrate security from the beginning of development
-
-## Output Format
-
-- Security analysis report identifying vulnerabilities and risks
-- Security fixes and improvements implemented
-- Updated security configurations
-- Recommendations for additional security measures
-- Security compliance verification
-- Updated validation patterns for security
-
-Ensure security audit is comprehensive with all vulnerabilities identified and addressed.
+**Audit Scope:** {{args}}
