@@ -15,7 +15,7 @@ The server will output the detected path on startup so you can verify it found t
 
 1. Navigate to the mcp-server directory:
    ```bash
-   cd mcp-server
+   cd ~/.qwen/extensions/web-dev-strategy/mcp-server
    ```
 
 2. Install dependencies:
@@ -29,54 +29,68 @@ The server will output the detected path on startup so you can verify it found t
 
 Add the MCP server to your Qwen Code configuration:
 
-**Linux/macOS:**
+**Project scope (default):**
 ```bash
 qwen mcp add web-dev-strategy node ~/.qwen/extensions/web-dev-strategy/mcp-server/src/index.js
 ```
 
-**Windows:**
+**User scope (available across all projects):**
 ```bash
-qwen mcp add web-dev-strategy node "%USERPROFILE%\.qwen\extensions\web-dev-strategy\mcp-server\src\index.js"
+qwen mcp add --scope user web-dev-strategy node ~/.qwen/extensions/web-dev-strategy/mcp-server/src/index.js
 ```
 
-Or with npx:
+**With description:**
 ```bash
-qwen mcp add web-dev-strategy npx --yes --prefix ~/.qwen/extensions/web-dev-strategy/mcp-server @web-dev-strategy/mcp-server
+qwen mcp add --description "Web Dev Strategy - Skills, Agents, Commands" web-dev-strategy node ~/.qwen/extensions/web-dev-strategy/mcp-server/src/index.js
+```
+
+**With trust (skip confirmations):**
+```bash
+qwen mcp add --trust web-dev-strategy node ~/.qwen/extensions/web-dev-strategy/mcp-server/src/index.js
 ```
 
 ### Option 2: Manual Configuration
 
 Add to your `.qwen/settings.json`:
 
-**Linux/macOS:**
 ```json
 {
   "mcpServers": {
     "web-dev-strategy": {
       "command": "node",
-      "args": ["/home/user/.qwen/extensions/web-dev-strategy/mcp-server/src/index.js"],
+      "args": ["{{PATH_TO}}/mcp-server/src/index.js"],
       "description": "Web Dev Strategy - Skills, Agents, and Commands",
-      "trust": true
+      "trust": true,
+      "timeout": 300000
     }
   }
 }
 ```
 
-**Windows:**
-```json
-{
-  "mcpServers": {
-    "web-dev-strategy": {
-      "command": "node",
-      "args": ["%USERPROFILE%\\.qwen\\extensions\\web-dev-strategy\\mcp-server\\src\\index.js"],
-      "description": "Web Dev Strategy - Skills, Agents, and Commands",
-      "trust": true
-    }
-  }
-}
+Replace `{{PATH_TO}}` with:
+- Linux/macOS: `/home/<username>` or `$HOME`
+- Windows: `%USERPROFILE%`
+
+## Management Commands
+
+### List installed MCP servers
+```bash
+qwen mcp list
 ```
 
-**Note:** Replace `%USERPROFILE%` with your actual user profile path on Windows, or use `$HOME` on Linux/macOS.
+### Remove MCP server
+```bash
+qwen mcp remove web-dev-strategy
+```
+
+### Verify installation
+
+After adding the server, restart Qwen Code and verify it's connected:
+```bash
+qwen mcp list
+```
+
+You should see `web-dev-strategy` in the list with status "Connected".
 
 ## Available Tools
 
