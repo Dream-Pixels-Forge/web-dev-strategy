@@ -1,28 +1,29 @@
 # Web Development Strategy Extension
 
-A comprehensive QWEN CLI extension for orchestrating web development workflows with multi-agent coordination and accuracy verification.
+A comprehensive QWEN CLI extension for orchestrating web development workflows with multi-agent coordination, accuracy verification, and MCP server support.
 
 ## Overview
 
-The Web Development Strategy Extension provides a complete ecosystem of specialized agents for web development, from initial planning through deployment and maintenance. Built for QWEN CLI with TOML-based configuration for maximum compatibility and performance.
+The Web Development Strategy Extension provides a complete ecosystem of specialized agents for web development, from initial planning through deployment and maintenance. Built for QWEN CLI with Markdown-based commands and comprehensive agent orchestration.
 
 ## Features
 
 ### 🚀 Core Capabilities
 
-- **Multi-Agent Orchestration**: Coordinate 15+ specialized agents for comprehensive development workflows
+- **Multi-Agent Orchestration**: Coordinate 25+ specialized agents for comprehensive development workflows
 - **Project Management**: Automated roadmap creation, task tracking, and progress monitoring
 - **Quality Assurance**: Built-in accuracy verification, security auditing, and performance optimization
 - **Template-Driven**: Leverage extensive template library for consistent, high-quality outputs
-- **QWEN CLI Compatible**: Full TOML configuration support for seamless CLI integration
+- **MCP Server**: Access all skills, agents, and commands programmatically
+- **QWEN CLI Compatible**: Full Markdown command format with {{args}} parameter injection
 
 ### 🎯 Command Categories
 
-| Category      | Commands               | Purpose                                           |
-|---------------|------------------------|---------------------------------------------------|
+| Category | Commands | Purpose |
+|----------|----------|---------|
 | **Development** | `new-feature`, `run-prompt` | Feature implementation and prompt execution |
 | **Testing** | `run-tests` | Comprehensive testing workflows |
-| **Deployment** | `deploy-app` | Production deployment and operations |
+| **Deployment** | `deploy-app`, `run-pipeline`, `rollback-deployment`, `monitor-system` | Production deployment and operations |
 | **Version Control** | `git-commit` | Git operations and version control |
 | **Security** | `security-audit` | Security analysis and vulnerability assessment |
 | **Performance** | `optimize-performance` | Performance optimization and profiling |
@@ -118,28 +119,47 @@ The extension orchestrates a comprehensive agent ecosystem:
 - **Tasks Agent**: Organizes and tracks implementation tasks
 - **Code Generation Agent**: Full-stack feature implementation
 
-#### Quality Agents
+#### Development Agents
+
+- **UI/UX Agent**: User experience design and implementation
+- **Prototyper Agent**: UI prototyping with Google Stitch
+- **Grid Master Agent**: Grid layout calculations
+- **Debugger Agent**: Issue debugging and resolution
+
+#### Quality-Security Agents
 
 - **Testing Agent**: Comprehensive testing workflows
 - **Security Agent**: Security analysis and vulnerability assessment
 - **Performance Agent**: Performance optimization and profiling
 - **Accessibility Agent**: WCAG compliance and accessibility improvements
 - **Accuracy Verification Agent**: Deep accuracy validation
+- **Lint Agent**: Code linting and formatting
 
-#### Specialized Agents
-
-- **UI/UX Agent**: User experience design and implementation
-- **Prototyper Agent**: UI prototyping with Google Stitch
-- **Debugger Agent**: Issue debugging and resolution
-- **Documentation Agent**: Technical documentation generation
-- **Deployment Agent**: Production deployment workflows
-- **Git Master Agent**: Version control operations and repository management
-
-#### Analysis Agents
+#### Planning-Docs Agents
 
 - **Analyst Agent**: Market analysis and research
 - **PRD Agent**: Product requirements documentation
 - **Trends Agent**: Technology and design trend research
+- **Proposal Agent**: Research-backed solution proposals
+
+#### Deployment Agents
+
+- **Deployment Agent**: Production deployment workflows
+- **CI/CD Agent**: Pipeline automation
+- **Rollback Agent**: Automated rollback procedures
+- **Monitoring Agent**: Production monitoring and observability
+
+#### Support-Improvements Agents
+
+- **Documentation Agent**: Technical documentation generation
+- **Prompt Refiner Agent**: Prompt enhancement
+- **Improvement Agent**: Code quality improvements
+- **Updater Agent**: Dependency management
+- **Improver Agent**: Subagent performance monitoring
+
+#### Git Master Agent
+
+- **Git Master Agent**: Version control with branch-based workflow (main, devs, features)
 
 ### Workflow Process
 
@@ -152,18 +172,20 @@ The extension orchestrates a comprehensive agent ecosystem:
 
 ## Configuration
 
-### TOML Structure
+### Markdown Command Format
 
-The extension uses TOML configuration for QWEN CLI compatibility:
+The extension uses Markdown format for commands with YAML frontmatter:
 
-```toml
-[commands]
-[commands.new-feature]
-name = "new-feature"
-description = "Create complete feature implementation"
-agent = "code-generation-agent"
-category = "development"
-arguments = true
+```markdown
+---
+description: Create a complete feature implementation. Use {{args}} to specify the feature request.
+---
+
+# new-feature
+
+Call @code-generation-agent to implement the following feature request:
+
+**Feature Request:** {{args}}
 ```
 
 ### Extension Configuration
@@ -173,11 +195,9 @@ arguments = true
 ```json
 {
   "name": "web-dev-strategy",
-  "version": "0.1.0",
+  "version": "0.3.1",
   "contextFileName": "QWEN.md",
-  "commandsConfig": "commands.toml",
-  "commandsPath": "commands/wds",
-  "format": "toml"
+  "commands": "commands/wds"
 }
 ```
 
@@ -185,22 +205,67 @@ arguments = true
 
 ```
 web-dev-strategy/
-├── commands.toml              # Main command registry
-├── qwen-extension.json         # Extension configuration
-├── QWEN.md                   # Context and documentation
-├── commands/wds/              # Individual command files (TOML format)
-│   ├── new-feature.toml
-│   ├── deploy-app.toml
-│   ├── git-commit.toml
-│   ├── run-tests.toml
-│   └── ... (15 total TOML files)
+├── qwen-extension.json         # Extension configuration (v0.3.1)
+├── QWEN.md                    # Context and documentation
+├── commands/wds/              # Command files (Markdown format)
+│   ├── new-feature.md
+│   ├── deploy-app.md
+│   ├── git-commit.md
+│   ├── run-tests.md
+│   └── ... (18 command files)
 ├── agents/                    # Agent definitions
+│   ├── Development/
+│   ├── Quality-Security/
+│   ├── Planning-Docs/
+│   ├── Deployment/
+│   ├── Support-Improvements/
+│   └── Git master/
 ├── templates/                 # Template library
-├── mandatory_docs/            # Core documentation
-└── skills/                   # Extension skills
+├── skills/                   # Extension skills
+│   ├── shadcn-ui/
+│   ├── remotion/
+│   ├── stitch-loop/
+│   ├── design-md/
+│   ├── react-components/
+│   └── ... (search skills)
+└── mcp-server/              # MCP server for programmatic access
+    ├── src/index.js
+    └── package.json
 ```
 
-## Templates and Patterns
+## MCP Server
+
+The extension includes an MCP server for programmatic access to all skills, agents, and commands:
+
+### Features
+
+- **Auto-Path Detection**: Automatically finds the extension installation
+- **Utility Tools**: List skills, agents, and commands
+- **Skill Tools**: Use any of 13 skills directly
+- **Agent Tools**: Delegate to any of 25+ agents
+- **Command Tools**: Execute any of 18 commands
+
+### Installation
+
+```bash
+cd mcp-server
+npm install
+
+# Linux/macOS
+qwen mcp add web-dev-strategy node ~/.qwen/extensions/web-dev-strategy/mcp-server/src/index.js
+
+# Windows
+qwen mcp add web-dev-strategy node "%USERPROFILE%\.qwen\extensions\web-dev-strategy\mcp-server\src\index.js"
+```
+
+### Usage
+
+```json
+{"name": "list_skills", "arguments": {}}
+{"name": "skill_shadcn-ui", "arguments": {"task": "Add a data table"}}
+{"name": "agent_code-generation", "arguments": {"task": "Implement user auth"}}
+{"name": "command_new-feature", "arguments": {"args": "User dashboard"}}
+```
 
 The extension includes a comprehensive template library:
 
@@ -261,26 +326,26 @@ Full integration with QWEN CLI features:
 1. Clone the repository
 2. Ensure QWEN CLI is installed
 3. Test commands with `qwen wds <command>`
-4. Follow TOML configuration standards
+4. Follow Markdown command format with YAML frontmatter
 
 ### Adding New Commands
 
-1. Create command file in `commands/wds/` with `.toml` extension (markdown files no longer supported)
-2. Add command to `commands.toml` registry
-3. Follow the established TOML structure:
+1. Create command file in `commands/wds/` with `.md` extension
+2. Follow the established Markdown format:
 
-   ```toml
-   [command]
-   name = "command-name"
-   description = "Command description"
-   agent = "agent-name"
-   category = "category"
-   arguments = true
+   ```markdown
+   ---
+   description: Command description. Use {{args}} to specify the input.
+   ---
 
-   [content]
-   role = "Agent role description"
-   instructions = "Detailed instructions"
+   # command-name
+
+   Call @agent-name to perform the action:
+
+   **Input:** {{args}}
    ```
+
+3. Commands should delegate to agents using `@agent-name` syntax
 
 ## Support
 
@@ -294,10 +359,11 @@ Full integration with QWEN CLI features:
 
 Common issues and solutions:
 
-1. **Command not found**: Verify TOML syntax in commands.toml
+1. **Command not found**: Verify Markdown syntax in command files
 2. **Agent not responding**: Check agent configuration and dependencies
 3. **Template missing**: Ensure templates directory is populated
 4. **Permission errors**: Verify file permissions and access rights
+5. **MCP server not working**: Ensure Node.js is installed and dependencies are installed (`cd mcp-server && npm install`)
 
 ## License
 
@@ -342,3 +408,21 @@ See LICENSE file for details.
 - Updated run-prompt to use code-generation-agent directly
 - Enhanced version management and documentation consistency
 - Improved maintainability and user experience
+
+### v0.3.1
+
+- **Subagent Improvements**: Updated all 25+ subagents with Qwen best practices
+  - Added "USE PROACTIVELY" hints for proactive delegation
+  - Standardized YAML frontmatter format
+  - Added structured "When to Use This Agent" sections with use case examples
+- **Git Master Restructured**: Converted from folder-based to branch-based workflow
+  - Uses 3 git branches: main, devs, features
+  - Updated all references and workflow diagrams
+- **Command Updates**: Converted all 18 commands to new format
+  - Use {{args}} parameter injection syntax
+  - Call corresponding agents using @agent-name
+  - Simplified YAML frontmatter
+- **MCP Server**: Added new MCP server for programmatic access
+  - Auto-path detection for extension location
+  - Utility, skill, agent, and command tools
+  - Full documentation in mcp-server/README.md
